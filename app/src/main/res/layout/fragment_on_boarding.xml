@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragments.OnBoardingFragment">
+    tools:context=".presentation.ui.fragments.onBoard.OnBoardingFragment">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp_on_boarding"
@@ -15,17 +15,16 @@
     <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
         android:id="@+id/dots_indicator"
         android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_height="5dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         app:dampingRatio="0.5"
         app:dotsColor="@color/green"
-        app:dotsStrokeColor="@color/gray"
         app:dotsCornerRadius="10dp"
         app:dotsSize="100dp"
         app:dotsSpacing="6dp"
+        app:dotsStrokeColor="@color/gray"
         app:dotsStrokeWidth="4dp"
-        app:stiffness="300"
-        />
+        app:stiffness="300" />
 
 </FrameLayout>
