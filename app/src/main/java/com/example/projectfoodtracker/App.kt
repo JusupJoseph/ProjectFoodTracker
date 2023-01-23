@@ -9,7 +9,7 @@ import com.example.projectfoodtracker.presentation.CounterNotificationService
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class App: Application() {
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
