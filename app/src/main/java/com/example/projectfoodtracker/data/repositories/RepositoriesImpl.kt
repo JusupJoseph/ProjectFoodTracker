@@ -5,23 +5,27 @@ import com.example.projectfoodtracker.domain.repositories.OnBoardingRepository
 import com.example.projectfoodtracker.domain.repositories.UserInfoRepository
 import javax.inject.Inject
 
-class UserRepositoryImpl @Inject constructor(
+class RepositoriesImpl @Inject constructor(
     private val preferences: PreferencesHelper
-) : UserInfoRepository{
-
-    override fun next() {
-        preferences.isShow = true
-    }
-    override fun transition() {
-    }
-
-    override fun onBoardInfo(image: Int, tittle: String, description: String, nameBtn: String) {
-
-    }
+) : UserInfoRepository, OnBoardingRepository {
 
     override fun saveUserInfo(username: String) {
         preferences.username = username
     }
 
     override fun getUserInfo() = preferences.username!!
+
+    override fun isAuthorized() = preferences.isAuthorized
+
+    override fun Authorized(boolean: Boolean) {
+        preferences.isAuthorized = boolean
+    }
+
+    override fun isShow(boolean: Boolean) {
+        preferences.isShow = boolean
+    }
+
+    override fun getInfo() = preferences.isShow
+
+
 }

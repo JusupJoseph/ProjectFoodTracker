@@ -1,6 +1,7 @@
-package com.example.cleanarchitecture.domain.repositories
+package com.example.projectfoodtracker.domain.repositories
 
-interface OnBoardRepository {
-    fun next()
-    fun transition()
+interface OnBoardingRepository {
+    fun isShow(boolean: Boolean)
+    fun getInfo(): Boolean
 }
+

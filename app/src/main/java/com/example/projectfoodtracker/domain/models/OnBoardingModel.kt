@@ -1,4 +1,5 @@
-package com.example.cleanarchitecture.domain.models.onBoarding
+package com.example.projectfoodtracker.domain.models
+
 
 data class OnBoardingModel(
     val image: Int,
@@ -6,3 +7,4 @@ data class OnBoardingModel(
     val description: String,
     val nameBtn: String
 )
+

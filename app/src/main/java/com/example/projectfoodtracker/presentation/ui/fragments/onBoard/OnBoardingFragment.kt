@@ -1,30 +1,31 @@
-package com.example.projectfoodtracker.presentation.ui.fragments
+package com.example.projectfoodtracker.presentation.ui.fragments.onBoard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.projectfoodtracker.R
-import com.example.projectfoodtracker.data.local.sharedpreferences.PreferencesHelper
 import com.example.projectfoodtracker.databinding.FragmentOnBoardingBinding
 import com.example.projectfoodtracker.domain.models.OnBoardingModel
-import com.example.projectfoodtracker.domain.repositories.OnBoardingRepository
 import com.example.projectfoodtracker.presentation.ui.adapters.OnBoardingAdapter
+import com.example.projectfoodtracker.presentation.ui.fragments.inter.TransitionOnBoard
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding){
+class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding), TransitionOnBoard{
 
     private val binding by viewBinding(FragmentOnBoardingBinding::bind)
     private val list = arrayListOf<OnBoardingModel>()
+    private val viewModel by viewModels<OnBoardViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        if (viewModel.getInfo()) {
+            findNavController().navigate(R.id.clearBackStack)
+        }
 
         list.add(
             OnBoardingModel(
@@ -48,10 +49,26 @@ class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding){
                 "GO!"
             )
         )
-        binding.vpOnBoarding.adapter = OnBoardingAdapter(list)
+        binding.vpOnBoarding.adapter = OnBoardingAdapter(list, this)
         binding.dotsIndicator.attachTo(binding.vpOnBoarding)
 
 
     }
+
+    override fun next() {
+        viewModel.saveInfo(boolean = true)
+        findNavController().navigate(R.id.signInFragment)
+    }
+
+    override fun transition() {
+        val adapter = binding.vpOnBoarding.adapter
+        val currentPosition = binding.vpOnBoarding.currentItem
+        val nextPosition = currentPosition + 1
+        if (nextPosition < adapter!!.itemCount) {
+            binding.vpOnBoarding.currentItem = nextPosition
+        }
+
+    }
+
 
 }
