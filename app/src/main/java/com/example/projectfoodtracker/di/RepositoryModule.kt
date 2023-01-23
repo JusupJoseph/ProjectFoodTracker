@@ -1,6 +1,7 @@
 package com.example.projectfoodtracker.di
 
-import com.example.projectfoodtracker.data.repositories.RepositoriesImpl
+import com.example.projectfoodtracker.data.repositories.OnBoardRepositoryImpl
+import com.example.projectfoodtracker.data.repositories.UserRepositoryImpl
 import com.example.projectfoodtracker.domain.repositories.OnBoardingRepository
 import com.example.projectfoodtracker.domain.repositories.UserInfoRepository
 import dagger.Binds
@@ -13,8 +14,8 @@ import dagger.hilt.components.SingletonComponent
 interface RepositoryModule {
 
     @Binds
-    fun bindUserRepository(repositoriesImpl: RepositoriesImpl): UserInfoRepository
+    fun bindUserRepository(repositoriesImpl: UserRepositoryImpl): UserInfoRepository
 
     @Binds
-    fun bindOnBoardRepository(repositoriesImpl: RepositoriesImpl): OnBoardingRepository
+    fun bindOnBoardRepository(repositoriesImpl: OnBoardRepositoryImpl): OnBoardingRepository
 }

@@ -51,8 +51,6 @@ class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding), TransitionOn
         )
         binding.vpOnBoarding.adapter = OnBoardingAdapter(list, this)
         binding.dotsIndicator.attachTo(binding.vpOnBoarding)
-
-
     }
 
     override fun next() {
@@ -67,8 +65,5 @@ class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding), TransitionOn
         if (nextPosition < adapter!!.itemCount) {
             binding.vpOnBoarding.currentItem = nextPosition
         }
-
     }
-
-
 }

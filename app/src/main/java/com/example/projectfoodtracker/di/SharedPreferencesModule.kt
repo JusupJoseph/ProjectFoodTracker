@@ -1,7 +1,8 @@
 package com.example.projectfoodtracker.di
 
 import android.content.Context
-import com.example.projectfoodtracker.data.local.sharedpreferences.PreferencesHelper
+import com.example.projectfoodtracker.data.local.sharedpreferences.OnBoardPreferencesHelper
+import com.example.projectfoodtracker.data.local.sharedpreferences.UserPreferencesHelper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +16,13 @@ object SharedPreferencesModule {
 
     @Provides
     @Singleton
-    fun provideSharedPreferences(@ApplicationContext context: Context) : PreferencesHelper {
-        return PreferencesHelper(context)
+    fun provideOnBoardSharedPreferences(@ApplicationContext context: Context) : OnBoardPreferencesHelper {
+        return OnBoardPreferencesHelper(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideUserSharedPreferences(@ApplicationContext context: Context) : UserPreferencesHelper {
+        return UserPreferencesHelper(context)
     }
 }

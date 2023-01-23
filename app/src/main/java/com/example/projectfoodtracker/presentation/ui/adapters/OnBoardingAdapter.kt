@@ -10,9 +10,7 @@ import com.example.projectfoodtracker.presentation.ui.fragments.inter.Transition
 class OnBoardingAdapter(
     private val list: ArrayList<OnBoardingModel>,
     private val transition: TransitionOnBoard
-) :
-    RecyclerView.Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {
-
+): RecyclerView.Adapter<OnBoardingAdapter.OnBoardingViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OnBoardingViewHolder {
         return OnBoardingViewHolder(
@@ -38,7 +36,6 @@ class OnBoardingAdapter(
             binding.tvTittle.text = model.tittle
             binding.tvDescription.text = model.description
             binding.btnGo.text = model.nameBtn
-
 
             if (binding.btnGo.text == "Пропустить") {
                 binding.btnGo.setOnClickListener {

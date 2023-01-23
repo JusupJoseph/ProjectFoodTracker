@@ -1,44 +1,93 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id(Plugins.application)
+    id(Plugins.kotlinAndroid)
+    // Kapt
+    id(Plugins.kapt)
+
+    // Hilt
+    id(Plugins.hilt)
+
+    // SafeArgs
+    id(Plugins.safeArgs)
 }
 
+
 android {
-    namespace 'com.example.projectfoodtracker'
-    compileSdk 32
+    namespace = Config.applicationId
+    compileSdk = Config.compileAndTargetSdk
 
     defaultConfig {
-        applicationId "com.example.projectfoodtracker"
-        minSdk 21
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        applicationId = Config.applicationId
+        minSdk = Config.minSdk
+        targetSdk = Config.compileAndTargetSdk
+        versionCode = Config.versionCode
+        versionName = Config.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = Config.testInstrumentationRunner
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            isMinifyEnabled = false
+            proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "1.8"
     }
+
+    // ViewBinding
+    buildFeatures.viewBinding = true
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.6.0'
-    implementation 'com.google.android.material:material:1.7.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    // Core
+    implementation(Dependencies.core)
+
+    // Material
+    implementation(Dependencies.UIComponents.material)
+
+    // Constraint
+    implementation(Dependencies.UIComponents.constraint)
+
+    // AppCompat
+    implementation(Dependencies.UIComponents.appcompat)
+
+    // Hilt
+    implementation(Dependencies.Hilt.hilt)
+    kapt(Dependencies.Hilt.compiler)
+
+    // Glide
+    implementation(Dependencies.Glide.glide)
+    annotationProcessor(Dependencies.Glide.glideCompiler)
+
+    // NavComponents
+    implementation(Dependencies.NavComponents.navigationUI)
+    implementation(Dependencies.NavComponents.navigationFragment)
+
+    // LifeCycle
+    implementation(Dependencies.Lifecycle.lifecycleLiveData)
+    implementation(Dependencies.Lifecycle.lifecycleRunTime)
+    implementation(Dependencies.Lifecycle.lifecycleViewModel)
+
+    // ViewBindingPropertyDelegate
+    implementation(Dependencies.ViewBindingPropertyDelegate.viewBindingDelegate)
+
+    // Coroutines
+    implementation(Dependencies.Coroutines.coroutinesCore)
+    implementation(Dependencies.Coroutines.coroutinesAndroid)
+
+    // ViewPager
+    implementation(Dependencies.viewPager)
+
+    // DotsIndicator
+    implementation(Dependencies.dotsIndicator)
+
+    // Lottie
+    implementation(Dependencies.lottie)
 }

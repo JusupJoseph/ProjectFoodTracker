@@ -30,7 +30,6 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                 findNavController().navigate(R.id.mainFragment)
                 viewModel.authorized(boolean = true)
             }
-
         }
     }
 }

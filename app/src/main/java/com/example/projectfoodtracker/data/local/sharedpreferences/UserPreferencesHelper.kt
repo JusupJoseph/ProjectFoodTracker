@@ -2,17 +2,11 @@ package com.example.projectfoodtracker.data.local.sharedpreferences
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.projectfoodtracker.R
 
-class PreferencesHelper(context: Context) {
+class UserPreferencesHelper(context: Context) {
 
     private val sharedPreferences: SharedPreferences =
-        context.getSharedPreferences("onboard-preference", Context.MODE_PRIVATE)
-
-
-    var isShow: Boolean
-        get() = sharedPreferences.getBoolean("isShow", false)
-        set(value) = sharedPreferences.edit().putBoolean("isShow", value).apply()
+        context.getSharedPreferences("user-preference", Context.MODE_PRIVATE)
 
     var username: String?
         get() = sharedPreferences.getString("username", "")
@@ -21,5 +15,4 @@ class PreferencesHelper(context: Context) {
     var isAuthorized: Boolean
         get() = sharedPreferences.getBoolean("isAuthorized", false)
         set(value) = sharedPreferences.edit().putBoolean("isAuthorized", value).apply()
-
 }
