@@ -90,4 +90,9 @@ dependencies {
 
     // Lottie
     implementation(Dependencies.lottie)
+
+    // Room
+    implementation(Dependencies.Room.ktx)
+    implementation(Dependencies.Room.runtime)
+    kapt(Dependencies.Room.compiler)
 }

@@ -47,6 +47,13 @@ object Dependencies {
         const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
     }
 
+    object Room {
+        const val ktx = "androidx.room:room-ktx:${Versions.room_version}"
+        const val runtime = "androidx.room:room-compiler:${Versions.room_version}"
+        const val compiler = "androidx.room:room-runtime:${Versions.room_version}"
+    }
+
+
 
 
 }
@@ -71,4 +78,5 @@ object Versions {
     const val navigation = "2.5.3"
     const val glide = "4.14.2"
     const val application = "7.3.1"
+    const val room_version = "2.5.0"
 }
