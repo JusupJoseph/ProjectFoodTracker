@@ -12,4 +12,5 @@ plugins {
     // SafeArgs
     id (Plugins.safeArgs) version Versions.navigation apply false
 
+
 }

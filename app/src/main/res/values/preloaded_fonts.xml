@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/</item>
+        <item>@font/comfortaa_light</item>
         <item>@font/dela_gothic_one</item>
+        <item>@font/montserrat_extralight</item>
+        <item>@font/montserrat_light</item>
     </array>
 </resources>

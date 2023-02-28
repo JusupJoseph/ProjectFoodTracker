@@ -10,4 +10,24 @@
     <color name="gray">#CECECE</color>
     <color name="green">#8EC73F</color>
     <color name="green_two">#C2EA8B</color>
+    <color name="item_green">#69AB10</color>
+    <color name="orange">#D88B02</color>
+    <color name="little_light_black">#131212</color>
+    <color name="dark_gray">#505050</color>
+    <color name="note_background_color_one">#191818</color>
+    <color name="GreenYellow">#C2EA8B</color>
+    <color name="grey">#CECECE</color>
+    <color name="greenTrans">#A18EC73F</color>
+    <color name="note_background_color_two">#EBE4C9</color>
+    <color name="note_background_color_three">#571818</color>
+    <color name="transparent">#00000000 </color>
+
+    <declare-styleable name="ImageBehavior">
+        <attr name="finalYPosition" format="dimension"/>
+        <attr name="topXPosition" format="dimension"/>
+        <attr name="topToolbarPosition" format="dimension"/>
+        <attr name="topHeight" format="dimension"/>
+        <attr name="finalHeight" format="dimension"/>
+    </declare-styleable>
+
 </resources>

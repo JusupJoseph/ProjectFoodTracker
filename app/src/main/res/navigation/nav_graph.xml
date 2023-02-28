@@ -5,7 +5,6 @@
     android:id="@+id/nav_graph.xml"
     app:startDestination="@id/onBoardingFragment">
 
-
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="com.example.projectfoodtracker.presentation.ui.fragments.onBoard.OnBoardingFragment"
@@ -32,7 +31,45 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.projectfoodtracker.presentation.ui.fragments.MainFragment"
+        android:name="com.example.projectfoodtracker.presentation.ui.fragments.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.example.projectfoodtracker.presentation.ui.fragments.main.foods.FoodFragment"
+        android:label="fragment_food"
+        tools:layout="@layout/fragment_food" >
+        <action
+            android:id="@+id/action_foodFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+
+        <action
+            android:id="@+id/action_foodFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.projectfoodtracker.presentation.ui.fragments.main.foods.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.projectfoodtracker.presentation.ui.notification.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_notificationFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

@@ -43,7 +43,7 @@ class OnBoardingFragment : Fragment(R.layout.fragment_on_boarding), TransitionOn
         )
         list.add(
             OnBoardingModel(
-                R.drawable.img,
+                R.drawable.imgfoods,
                 "C возможностью",
                 "просмотра съеденных вами \n продуктов",
                 "GO!"

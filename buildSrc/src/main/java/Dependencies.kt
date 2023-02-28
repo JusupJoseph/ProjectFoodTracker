@@ -6,7 +6,7 @@ object Dependencies {
 
     object UIComponents {
         const val appcompat = "androidx.appcompat:appcompat:1.5.1"
-        const val material = "com.google.android.material:material:1.7.0"
+        const val material = "com.google.android.material:material:${Versions.material}"
         const val constraint = "androidx.constraintlayout:constraintlayout:2.1.4"
     }
 
@@ -47,8 +47,19 @@ object Dependencies {
         const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
     }
 
+    object Room {
+        const val ktx = "androidx.room:room-ktx:${Versions.room_version}"
+        const val runtime = "androidx.room:room-runtime:${Versions.room_version}"
+        const val compiler = "androidx.room:room-compiler:${Versions.room_version}"
+    }
 
+    object CordiantorLayout {
+        const val cordinator  = "androidx.coordinatorlayout:coordinatorlayout"
+    }
 
+    object MaterialComponents {
+        const val material = "com.google.android.material:material"
+    }
 }
 
 object Plugins {
@@ -71,4 +82,7 @@ object Versions {
     const val navigation = "2.5.3"
     const val glide = "4.14.2"
     const val application = "7.3.1"
+    const val room_version = "2.5.0"
+    const val cordinator = "1.2.0"
+    const val material = "1.5.0"
 }

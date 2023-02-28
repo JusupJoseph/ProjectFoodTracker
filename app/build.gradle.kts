@@ -11,7 +11,6 @@ plugins {
     id(Plugins.safeArgs)
 }
 
-
 android {
     namespace = Config.applicationId
     compileSdk = Config.compileAndTargetSdk
@@ -90,4 +89,17 @@ dependencies {
 
     // Lottie
     implementation(Dependencies.lottie)
+
+    // Room
+    implementation(Dependencies.Room.ktx)
+    implementation(Dependencies.Room.runtime)
+    kapt(Dependencies.Room.compiler)
+
+    // coordinatorLayout
+    implementation(Dependencies.CordiantorLayout.cordinator)
+
+    // Material Design Components
+    implementation(Dependencies.MaterialComponents.material)
+
+
 }
